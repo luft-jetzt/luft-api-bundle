@@ -1,0 +1,11 @@
+{
+    "name": "luft-jetzt/luft-api-bundle",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Malte Huebner",
+            "email": "maltehuebner@gmx.org"
+        }
+    ],
+    "require": {}
+}
