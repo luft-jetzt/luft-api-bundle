@@ -17,7 +17,7 @@ class Value
 
     /**
      * @JMS\Expose()
-     * @JMS\Type("\DateTime<'U'>")
+     * @JMS\Type("DateTime<'U'>")
      */
     protected ?\DateTime $dateTime = null;
 

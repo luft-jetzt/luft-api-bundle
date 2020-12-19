@@ -41,13 +41,13 @@ class Station
 
     /**
      * @JMS\Expose()
-     * @JMS\Type("\DateTime<'U'>")
+     * @JMS\Type("DateTime<'U'>")
      */
     protected ?\DateTime $fromDate = null;
 
     /**
      * @JMS\Expose()
-     * @JMS\Type("\DateTime<'U'>")
+     * @JMS\Type("DateTime<'U'>")
      */
     protected ?\DateTime $untilDate = null;
 
