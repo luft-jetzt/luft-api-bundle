@@ -2,6 +2,7 @@
 
 namespace Caldera\LuftApiBundle\Api;
 
+use Caldera\LuftApiBundle\Client\ApiClientInterface;
 use Doctrine\Common\Annotations\AnnotationReader;
 use GuzzleHttp\Client;
 use JMS\Serializer\SerializerInterface;
@@ -10,19 +11,12 @@ abstract class AbstractApi
 {
     const SERIALIZER_FORMAT = 'json';
 
-    protected Client $client;
     protected SerializerInterface $serializer;
+    protected ApiClientInterface $client;
 
-    public function __construct(SerializerInterface $serializer)
+    public function __construct(ApiClientInterface $client, SerializerInterface $serializer)
     {
-        $this->client = new Client([
-            'base_uri' => 'https://localhost:8000/',
-            'verify' => false,
-        ]);
-
+        $this->client = $client;
         $this->serializer = $serializer;
-
-        // @see https://github.com/symfony/symfony/issues/29161
-        AnnotationReader::addGlobalIgnoredName('alias');
     }
 }
