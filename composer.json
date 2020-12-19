@@ -8,11 +8,9 @@
         }
     ],
     "require": {
-        "autumndev/jms-serializer-carbon": "^1.2",
         "symfony/framework-bundle": "^5.0",
         "jms/serializer-bundle": "^3.7",
-        "guzzlehttp/guzzle": "^7.2",
-        "nesbot/carbon": "^2.42"
+        "guzzlehttp/guzzle": "^7.2"
     },
     "autoload": {
         "psr-4": {

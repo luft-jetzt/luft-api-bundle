@@ -2,7 +2,6 @@
 
 namespace Caldera\LuftApiBundle\Model;
 
-use Carbon\Carbon;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -18,9 +17,9 @@ class Value
 
     /**
      * @JMS\Expose()
-     * @JMS\Type("Carbon<'U'>")
+     * @JMS\Type("\DateTime<'U'>")
      */
-    protected ?Carbon $dateTime = null;
+    protected ?\DateTime $dateTime = null;
 
     /**
      * @JMS\Expose()
@@ -51,12 +50,12 @@ class Value
         return $this;
     }
 
-    public function getDateTime(): ?Carbon
+    public function getDateTime(): ?\DateTime
     {
         return $this->dateTime;
     }
 
-    public function setDateTime(Carbon $dateTime): Value
+    public function setDateTime(\DateTime $dateTime): Value
     {
         $this->dateTime = $dateTime;
 
