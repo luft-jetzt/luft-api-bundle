@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1cb0112c50bb6d26ecc741f73b2be43",
+    "content-hash": "2d2e39ba8eec144a0837d502b401b102",
     "packages": [
+        {
+            "name": "autumndev/jms-serializer-carbon",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/autumndev/jms-serializer-carbon.git",
+                "reference": "740221e358eee3190a89b054a88c46d0e334a838"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/autumndev/jms-serializer-carbon/zipball/740221e358eee3190a89b054a88c46d0e334a838",
+                "reference": "740221e358eee3190a89b054a88c46d0e334a838",
+                "shasum": ""
+            },
+            "require": {
+                "jms/serializer": "^2.0 || ^3.0",
+                "nesbot/carbon": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "AutumnDev": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GNU General Public License v2.0"
+            ],
+            "authors": [
+                {
+                    "name": "autumndev",
+                    "email": "sayhi@autumndev.co.uk"
+                }
+            ],
+            "description": "Carbon Serialization or JSM Serializer",
+            "support": {
+                "issues": "https://github.com/autumndev/jms-serializer-carbon/issues",
+                "source": "https://github.com/autumndev/jms-serializer-carbon/tree/master"
+            },
+            "time": "2020-07-23T07:26:30+00:00"
+        },
         {
             "name": "doctrine/annotations",
             "version": "1.11.1",

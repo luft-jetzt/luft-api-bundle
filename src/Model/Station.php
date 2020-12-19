@@ -2,6 +2,7 @@
 
 namespace Caldera\LuftApiBundle\Model;
 
+use Carbon\Carbon;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -41,15 +42,15 @@ class Station
 
     /**
      * @JMS\Expose()
-     * @JMS\Type("DateTime<'U'>")
+     * @JMS\Type("Carbon<'U'>")
      */
-    protected ?\DateTime $fromDate = null;
+    protected ?Carbon $fromDate = null;
 
     /**
      * @JMS\Expose()
-     * @JMS\Type("DateTime<'U'>")
+     * @JMS\Type("Carbon<'U'>")
      */
-    protected ?\DateTime $untilDate = null;
+    protected ?Carbon $untilDate = null;
 
     /**
      * @JMS\Expose()
@@ -148,24 +149,24 @@ class Station
         return $this->cityName;
     }
 
-    public function getFromDate(): ?\DateTime
+    public function getFromDate(): ?Carbon
     {
         return $this->fromDate;
     }
 
-    public function setFromDate(\DateTime $fromDate = null): Station
+    public function setFromDate(Carbon $fromDate = null): Station
     {
         $this->fromDate = $fromDate;
 
         return $this;
     }
 
-    public function getUntilDate(): ?\DateTime
+    public function getUntilDate(): ?Carbon
     {
         return $this->untilDate;
     }
 
-    public function setUntilDate(\DateTime $untilDate = null): Station
+    public function setUntilDate(Carbon $untilDate = null): Station
     {
         $this->untilDate = $untilDate;
 
