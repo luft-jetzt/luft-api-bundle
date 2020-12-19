@@ -6,9 +6,7 @@
 
     <services>
         <defaults autowire="true" autoconfigure="true"/>
-        <prototype namespace="Caldera\LuftApiBundle\" resource="../src/*"
-                   exclude="../src/{DependencyInjection,Entity,Tests,Kernel.php}"/>
-
-        <service id="Caldera\LuftApiBundle\Api\ValueApiInterface"/>
+        <prototype namespace="Caldera\LuftApiBundle\" resource="../../*"
+                   exclude="../../{DependencyInjection,Entity,Tests,Kernel.php}"/>
     </services>
 </container>
