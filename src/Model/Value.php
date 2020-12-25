@@ -33,6 +33,8 @@ class Value
      */
     protected ?string $pollutant = null;
 
+    protected ?string $tag = null;
+
     public function __construct()
     {
 
@@ -83,6 +85,18 @@ class Value
     {
         $this->pollutant = $pollutant;
 
+        return $this;
+    }
+
+    public function getTag(): ?string
+    {
+        return $this->tag;
+    }
+
+    public function setTag(string $tag): Value
+    {
+        $this->tag = $tag;
+        
         return $this;
     }
 }
