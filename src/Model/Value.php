@@ -33,6 +33,10 @@ class Value
      */
     protected ?string $pollutant = null;
 
+    /**
+     * @JMS\Expose()
+     * @JMS\Type("string")
+     */
     protected ?string $tag = null;
 
     public function __construct()
