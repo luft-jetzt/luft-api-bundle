@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abeafdf06fff55eed515b96c3f1b9bef",
+    "content-hash": "551b47e3bb8a89ca0d51bee47b0f1fe6",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -702,16 +702,16 @@
         },
         {
             "name": "luft-jetzt/luft-model",
-            "version": "dev-extract",
+            "version": "0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/luft-jetzt/luft-model.git",
-                "reference": "1edd4e59be138068ac95cbf67486bd00241d3462"
+                "reference": "42548619f9b1dc5b2da2d41997ac56d2cb8ec923"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/luft-jetzt/luft-model/zipball/1edd4e59be138068ac95cbf67486bd00241d3462",
-                "reference": "1edd4e59be138068ac95cbf67486bd00241d3462",
+                "url": "https://api.github.com/repos/luft-jetzt/luft-model/zipball/42548619f9b1dc5b2da2d41997ac56d2cb8ec923",
+                "reference": "42548619f9b1dc5b2da2d41997ac56d2cb8ec923",
                 "shasum": ""
             },
             "require": {
@@ -733,9 +733,9 @@
             ],
             "support": {
                 "issues": "https://github.com/luft-jetzt/luft-model/issues",
-                "source": "https://github.com/luft-jetzt/luft-model/tree/extract"
+                "source": "https://github.com/luft-jetzt/luft-model/tree/0.1"
             },
-            "time": "2020-12-27T13:24:21+00:00"
+            "time": "2020-12-27T22:23:56+00:00"
         },
         {
             "name": "psr/cache",
@@ -2915,10 +2915,8 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "alpha",
-    "stability-flags": {
-        "luft-jetzt/luft-model": 20
-    },
+    "minimum-stability": "stable",
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
