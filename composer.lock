@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "938adce87f9b9a36d16a2ed0abab2a38",
+    "content-hash": "551b47e3bb8a89ca0d51bee47b0f1fe6",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -699,6 +699,43 @@
                 }
             ],
             "time": "2020-06-28T11:26:21+00:00"
+        },
+        {
+            "name": "luft-jetzt/luft-model",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luft-jetzt/luft-model.git",
+                "reference": "42548619f9b1dc5b2da2d41997ac56d2cb8ec923"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luft-jetzt/luft-model/zipball/42548619f9b1dc5b2da2d41997ac56d2cb8ec923",
+                "reference": "42548619f9b1dc5b2da2d41997ac56d2cb8ec923",
+                "shasum": ""
+            },
+            "require": {
+                "jms/serializer": "^3.10",
+                "php": "^7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Caldera\\LuftModel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Malte Huebner",
+                    "email": "maltehuebner@gmx.org"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/luft-jetzt/luft-model/issues",
+                "source": "https://github.com/luft-jetzt/luft-model/tree/0.1"
+            },
+            "time": "2020-12-27T22:23:56+00:00"
         },
         {
             "name": "psr/cache",
@@ -2882,7 +2919,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.4"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
 }

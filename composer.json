@@ -8,9 +8,11 @@
         }
     ],
     "require": {
+        "php": "^7.4",
         "symfony/framework-bundle": "^5.0",
         "jms/serializer-bundle": "^3.7",
-        "guzzlehttp/guzzle": "^7.2"
+        "guzzlehttp/guzzle": "^7.2",
+        "luft-jetzt/luft-model": "0.1"
     },
     "autoload": {
         "psr-4": {

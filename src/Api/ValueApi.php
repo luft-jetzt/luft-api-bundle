@@ -2,7 +2,7 @@
 
 namespace Caldera\LuftApiBundle\Api;
 
-use Caldera\LuftApiBundle\Model\Value;
+use Caldera\LuftModel\Model\Value;
 
 class ValueApi extends AbstractApi implements ValueApiInterface
 {
