@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "938adce87f9b9a36d16a2ed0abab2a38",
+    "content-hash": "abeafdf06fff55eed515b96c3f1b9bef",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -699,6 +699,43 @@
                 }
             ],
             "time": "2020-06-28T11:26:21+00:00"
+        },
+        {
+            "name": "luft-jetzt/luft-model",
+            "version": "dev-extract",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luft-jetzt/luft-model.git",
+                "reference": "1edd4e59be138068ac95cbf67486bd00241d3462"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luft-jetzt/luft-model/zipball/1edd4e59be138068ac95cbf67486bd00241d3462",
+                "reference": "1edd4e59be138068ac95cbf67486bd00241d3462",
+                "shasum": ""
+            },
+            "require": {
+                "jms/serializer": "^3.10",
+                "php": "^7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Caldera\\LuftModel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Malte Huebner",
+                    "email": "maltehuebner@gmx.org"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/luft-jetzt/luft-model/issues",
+                "source": "https://github.com/luft-jetzt/luft-model/tree/extract"
+            },
+            "time": "2020-12-27T13:24:21+00:00"
         },
         {
             "name": "psr/cache",
@@ -2878,11 +2915,15 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "alpha",
+    "stability-flags": {
+        "luft-jetzt/luft-model": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.4"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
 }
