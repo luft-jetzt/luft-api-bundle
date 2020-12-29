@@ -9,7 +9,7 @@ class StationApi extends AbstractApi implements StationApiInterface
     public function getStations(string $provider = null): array
     {
         if ($provider) {
-            $response = $this->client->get(sprintf('/api/station?provider=%s', $provider);
+            $response = $this->client->get(sprintf('/api/station?provider=%s', $provider));
         } else {
             $response = $this->client->get('/api/station');
         }
