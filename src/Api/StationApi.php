@@ -2,7 +2,7 @@
 
 namespace Caldera\LuftApiBundle\Api;
 
-use Caldera\LuftApiBundle\Model\Station;
+use Caldera\LuftModel\Model\Station;
 
 class StationApi extends AbstractApi implements StationApiInterface
 {
