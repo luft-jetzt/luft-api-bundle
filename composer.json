@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4||^8.0",
         "symfony/framework-bundle": "^5.0",
         "jms/serializer-bundle": "^3.7",
         "guzzlehttp/guzzle": "^7.2",
