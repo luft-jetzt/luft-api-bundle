@@ -7,6 +7,8 @@ use JMS\Serializer\SerializerInterface;
 
 abstract class AbstractApi
 {
+    const SERIALIZER_FORMAT = 'json';
+
     protected SerializerInterface $serializer;
     protected ApiClientInterface $client;
 
