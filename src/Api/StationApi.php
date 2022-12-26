@@ -29,6 +29,9 @@ class StationApi extends AbstractApi implements StationApiInterface
 
     public function putStations(array $stationList): void
     {
+        // remove keys from $stationList to ensure we build a real json list
+        $stationList = array_values($stationList);
+
         $this->client->put('/api/station', [
             'body' => $this->serializer->serialize($stationList, self::SERIALIZER_FORMAT),
         ]);
