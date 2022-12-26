@@ -7,12 +7,8 @@ use JMS\Serializer\SerializerInterface;
 
 abstract class AbstractApi
 {
-    protected SerializerInterface $serializer;
-    protected ApiClientInterface $client;
-
-    public function __construct(ApiClientInterface $client, SerializerInterface $serializer)
+    public function __construct(protected ApiClientInterface $client, protected SerializerInterface $serializer)
     {
-        $this->client = $client;
-        $this->serializer = $serializer;
+
     }
 }
