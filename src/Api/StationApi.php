@@ -41,7 +41,7 @@ class StationApi extends AbstractApi implements StationApiInterface
     {
         /** @var Station $station */
         foreach ($stationList as $station) {
-            $postApiUrl = sprintf('/api/station/%d', $station->getStationCode());
+            $postApiUrl = sprintf('/api/station/%s', $station->getStationCode());
 
             $this->client->post($postApiUrl, [
                 'body' => $this->serializer->serialize($station, self::SERIALIZER_FORMAT),
