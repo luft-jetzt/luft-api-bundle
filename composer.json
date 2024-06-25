@@ -12,7 +12,8 @@
         "symfony/framework-bundle": "^7.1",
         "guzzlehttp/guzzle": "^7.2",
         "luft-jetzt/luft-model": "^0.4",
-        "symfony/serializer": "^7.1"
+        "symfony/serializer": "^7.1",
+        "symfony/property-access": "^7.1"
     },
     "autoload": {
         "psr-4": {
