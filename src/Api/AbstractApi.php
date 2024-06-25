@@ -3,13 +3,13 @@
 namespace Caldera\LuftApiBundle\Api;
 
 use Caldera\LuftApiBundle\Client\ApiClientInterface;
-use Symfony\Component\Serializer\SerializerInterface;
+use Caldera\LuftApiBundle\Serializer\LuftSerializerInterface;
 
 abstract class AbstractApi
 {
     public function __construct(
-        protected ApiClientInterface $client,
-        protected SerializerInterface $serializer
+        protected LuftSerializerInterface $luftSerializer,
+        protected ApiClientInterface $client
     ) {
 
     }

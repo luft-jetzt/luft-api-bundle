@@ -14,8 +14,8 @@ class StationApi extends AbstractApi implements StationApiInterface
             $response = $this->client->get('/api/station');
         }
 
-        $type = sprintf('array<%s>', Station::class);
-        $stationList = $this->serializer->deserialize($response->getContent(), $type, self::SERIALIZER_FORMAT);
+        $type = sprintf('%s[]', Station::class);
+        $stationList = $this->luftSerializer->deserialize($response->getContent(), $type, self::SERIALIZER_FORMAT);
 
         $assocStationList = [];
 
