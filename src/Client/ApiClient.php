@@ -2,37 +2,35 @@
 
 namespace Caldera\LuftApiBundle\Client;
 
-use Doctrine\Common\Annotations\AnnotationReader;
-use GuzzleHttp\Client;
-use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class ApiClient implements ApiClientInterface
 {
-    protected Client $client;
+    protected HttpClientInterface $httpClient;
 
     public function __construct(string $hostname, int $port, bool $verify)
     {
-        $this->client = new Client([
+        $this->httpClient = HttpClient::create([
             'base_uri' => sprintf('https://%s:%d/', $hostname, $port),
-            'verify' => $verify,
+            'verify_peer' => $verify,
+            'verify_host' => $verify,
         ]);
-
-        // @see https://github.com/symfony/symfony/issues/29161
-        AnnotationReader::addGlobalIgnoredName('alias');
     }
 
     public function put($uri, array $options = []): ResponseInterface
     {
-        return $this->client->put($uri, $options);
+        return $this->httpClient->request('PUT', $uri, $options);
     }
 
     public function post($uri, array $options = []): ResponseInterface
     {
-        return $this->client->post($uri, $options);
+        return $this->httpClient->request('GET', $uri, $options);
     }
 
     public function get($uri, array $options = []): ResponseInterface
     {
-        return $this->client->get($uri, $options);
+        return $this->httpClient->request('GET', $uri, $options);
     }
 }
