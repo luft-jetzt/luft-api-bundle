@@ -16,9 +16,6 @@ class ApiClient implements ApiClientInterface
             'base_uri' => sprintf('https://%s:%d/', $hostname, $port),
             'verify' => $verify,
         ]);
-
-        // @see https://github.com/symfony/symfony/issues/29161
-        AnnotationReader::addGlobalIgnoredName('alias');
     }
 
     public function put($uri, array $options = []): ResponseInterface
