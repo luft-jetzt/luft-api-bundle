@@ -2,7 +2,6 @@
 
 namespace Caldera\LuftApiBundle\Client;
 
-use Doctrine\Common\Annotations\AnnotationReader;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
