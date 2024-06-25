@@ -9,8 +9,8 @@
     ],
     "require": {
         "php": "^8.3",
-        "guzzlehttp/guzzle": "^7.2",
         "luft-jetzt/luft-model": "^0.4",
+        "symfony/http-client": "^7.1",
         "symfony/serializer": "^7.1",
         "symfony/dependency-injection": "^7.1"
     },
