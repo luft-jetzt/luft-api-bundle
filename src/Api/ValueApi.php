@@ -9,7 +9,7 @@ class ValueApi extends AbstractApi implements ValueApiInterface
     public function putValue(Value $value): void
     {
         $this->client->put('/api/value', [
-            'body' => $this->serializer->serialize($value, 'json'),
+            'body' => $this->luftSerializer->serialize($value, 'json'),
         ]);
     }
 
@@ -19,7 +19,7 @@ class ValueApi extends AbstractApi implements ValueApiInterface
         $valueList = array_values($valueList);
         
         $this->client->put('/api/value', [
-            'body' => $this->serializer->serialize($valueList, 'json'),
+            'body' => $this->luftSerializer->serialize($valueList, 'json'),
         ]);
     }
 }
