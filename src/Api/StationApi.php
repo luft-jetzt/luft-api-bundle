@@ -33,7 +33,7 @@ class StationApi extends AbstractApi implements StationApiInterface
         $stationList = array_values($stationList);
 
         $this->client->put('/api/station', [
-            'body' => $this->serializer->serialize($stationList, self::SERIALIZER_FORMAT),
+            'body' => $this->luftSerializer->serialize($stationList, self::SERIALIZER_FORMAT),
         ]);
     }
 
@@ -44,7 +44,7 @@ class StationApi extends AbstractApi implements StationApiInterface
             $postApiUrl = sprintf('/api/station/%s', $station->getStationCode());
 
             $this->client->post($postApiUrl, [
-                'body' => $this->serializer->serialize($station, self::SERIALIZER_FORMAT),
+                'body' => $this->luftSerializer->serialize($station, self::SERIALIZER_FORMAT),
             ]);
         }
     }
