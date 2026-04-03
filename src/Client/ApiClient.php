@@ -26,7 +26,7 @@ class ApiClient implements ApiClientInterface
 
     public function post($uri, array $options = []): ResponseInterface
     {
-        return $this->httpClient->request('GET', $uri, $options);
+        return $this->httpClient->request('POST', $uri, $options);
     }
 
     public function get($uri, array $options = []): ResponseInterface
