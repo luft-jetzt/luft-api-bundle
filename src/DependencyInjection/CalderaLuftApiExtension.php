@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Caldera\LuftApiBundle\DependencyInjection;
 
@@ -14,7 +12,7 @@ class CalderaLuftApiExtension extends Extension
 {
     public function load(array $defaultConfigs, ContainerBuilder $container): void
     {
-        $loader = new PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.php');
 
         $configuration = new Configuration();

@@ -1,15 +1,13 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-namespace Symfony\Component\DependencyInjection\Loader\Configurator;
-
-return function (ContainerConfigurator $container): void {
+return static function (ContainerConfigurator $container): void {
     $services = $container->services()
         ->defaults()
             ->autowire()
             ->autoconfigure();
 
-    $services->load('Caldera\\LuftApiBundle\\', '../../')
+    $services->load('Caldera\\LuftApiBundle\\', '../../*')
         ->exclude('../../{DependencyInjection,Entity,Tests,Kernel.php}');
 };
