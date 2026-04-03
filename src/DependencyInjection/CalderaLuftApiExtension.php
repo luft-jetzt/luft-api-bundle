@@ -1,19 +1,21 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Caldera\LuftApiBundle\DependencyInjection;
 
 use Caldera\LuftApiBundle\Client\ApiClient;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class CalderaLuftApiExtension extends Extension
 {
     public function load(array $defaultConfigs, ContainerBuilder $container): void
     {
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('services.xml');
+        $loader = new PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.php');
 
         $configuration = new Configuration();
 
@@ -27,6 +29,6 @@ class CalderaLuftApiExtension extends Extension
 
     public function getAlias(): string
     {
-        return "caldera_luftapi";
+        return 'caldera_luftapi';
     }
 }
