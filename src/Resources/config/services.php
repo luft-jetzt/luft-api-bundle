@@ -9,5 +9,5 @@ return static function (ContainerConfigurator $container): void {
             ->autoconfigure();
 
     $services->load('Caldera\\LuftApiBundle\\', '../../*')
-        ->exclude('../../{DependencyInjection,Entity,Tests,Kernel.php}');
+        ->exclude('../../{DependencyInjection,Entity,Resources,Tests,Kernel.php}');
 };
