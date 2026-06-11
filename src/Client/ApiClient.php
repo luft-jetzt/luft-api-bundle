@@ -10,13 +10,19 @@ class ApiClient implements ApiClientInterface
 {
     protected HttpClientInterface $httpClient;
 
-    public function __construct(string $hostname, int $port, bool $verify)
+    public function __construct(string $hostname, int $port, bool $verify, string $token = '')
     {
-        $this->httpClient = HttpClient::create([
+        $options = [
             'base_uri' => sprintf('https://%s:%d/', $hostname, $port),
             'verify_peer' => $verify,
             'verify_host' => $verify,
-        ]);
+        ];
+
+        if ('' !== $token) {
+            $options['auth_bearer'] = $token;
+        }
+
+        $this->httpClient = HttpClient::create($options);
     }
 
     public function put($uri, array $options = []): ResponseInterface
