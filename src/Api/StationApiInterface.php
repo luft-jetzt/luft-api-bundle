@@ -6,7 +6,7 @@ interface StationApiInterface
 {
     const SERIALIZER_FORMAT = 'json';
 
-    public function getStations(): array;
+    public function getStations(?string $provider = null): array;
     public function postStations(array $stationList): void;
     public function putStations(array $stationList): void;
 }

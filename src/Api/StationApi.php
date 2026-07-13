@@ -6,7 +6,7 @@ use Caldera\LuftModel\Model\Station;
 
 class StationApi extends AbstractApi implements StationApiInterface
 {
-    public function getStations(string $provider = null): array
+    public function getStations(?string $provider = null): array
     {
         if ($provider) {
             $response = $this->client->get(sprintf('/api/station?provider=%s', $provider));
