@@ -1,9 +1,10 @@
 parameters:
     level: 8
-    # The baseline is generated on a single matrix cell, but CI runs a
-    # PHP 8.4/8.5 x lowest/highest matrix. Some findings are only reported on
-    # certain PHP versions or dependency sets, so a baseline entry can go
-    # unmatched on other cells. Do not fail on unmatched baseline entries.
+    # Static analysis runs on a single pinned setup (PHP 8.4, highest deps;
+    # see .github/workflows/ci.yml) because PHPStan findings depend on the
+    # exact installed dependency versions. Tolerate unmatched baseline
+    # entries so minor dependency drift within that range cannot turn the
+    # build red on a stale baseline line.
     reportUnmatchedIgnoredErrors: false
     paths:
         - src

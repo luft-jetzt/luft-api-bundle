@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   tests:
-    name: PHP ${{ matrix.php }} / ${{ matrix.dependencies }}
+    name: PHPUnit PHP ${{ matrix.php }} / ${{ matrix.dependencies }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -41,6 +41,32 @@ jobs:
         if: matrix.dependencies == 'lowest'
         run: composer update --no-interaction --no-progress --prefer-dist --prefer-lowest --prefer-stable
 
+      - name: PHPUnit
+        run: composer test
+
+  static-analysis:
+    name: Static analysis & code style
+    runs-on: ubuntu-latest
+
+    # PHPStan results depend on the exact installed dependency versions, so
+    # static analysis runs once on a pinned setup (PHP 8.4, highest deps)
+    # rather than across the whole test matrix. The PHPStan baseline is
+    # generated against this same setup. PHPUnit above still covers the full
+    # PHP 8.4/8.5 x lowest/highest matrix.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: composer update --no-interaction --no-progress --prefer-dist
+
       - name: PHPStan
         run: composer phpstan
 
@@ -48,6 +74,3 @@ jobs:
         env:
           PHP_CS_FIXER_IGNORE_ENV: 1
         run: composer cs-check
-
-      - name: PHPUnit
-        run: composer test
