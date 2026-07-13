@@ -1,5 +1,10 @@
 parameters:
     level: 8
+    # The baseline is generated on a single matrix cell, but CI runs a
+    # PHP 8.4/8.5 x lowest/highest matrix. Some findings are only reported on
+    # certain PHP versions or dependency sets, so a baseline entry can go
+    # unmatched on other cells. Do not fail on unmatched baseline entries.
+    reportUnmatchedIgnoredErrors: false
     paths:
         - src
         - tests

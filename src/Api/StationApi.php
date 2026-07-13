@@ -21,7 +21,10 @@ class StationApi extends AbstractApi implements StationApiInterface
 
         /** @var Station $station */
         foreach ($stationList as $station) {
-            $assocStationList[$station->getStationCode()] = $station;
+            // Cast the (?string) code to a definite string key. This keeps the
+            // pre-existing runtime behaviour (PHP already coerced null to '')
+            // while satisfying static analysis across the whole PHP matrix.
+            $assocStationList[(string) $station->getStationCode()] = $station;
         }
 
         return $assocStationList;
