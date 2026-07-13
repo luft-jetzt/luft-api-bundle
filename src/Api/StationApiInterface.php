@@ -4,7 +4,7 @@ namespace Caldera\LuftApiBundle\Api;
 
 interface StationApiInterface
 {
-    const SERIALIZER_FORMAT = 'json';
+    public const SERIALIZER_FORMAT = 'json';
 
     public function getStations(): array;
     public function postStations(array $stationList): void;

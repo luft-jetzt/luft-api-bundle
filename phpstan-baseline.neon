@@ -1,0 +1,169 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Deprecated in PHP 8\.4\: Parameter \#1 \$provider \(string\) is implicitly nullable via default value null\.$#'
+			identifier: parameter.implicitlyNullable
+			count: 1
+			path: src/Api/StationApi.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Api\\StationApi\:\:getStations\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Api/StationApi.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Api\\StationApi\:\:postStations\(\) has parameter \$stationList with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Api/StationApi.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Api\\StationApi\:\:putStations\(\) has parameter \$stationList with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Api/StationApi.php
+
+		-
+			message: '#^Possibly invalid array key type string\|null\.$#'
+			identifier: offsetAccess.invalidOffset
+			count: 1
+			path: src/Api/StationApi.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Api\\StationApiInterface\:\:getStations\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Api/StationApiInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Api\\StationApiInterface\:\:postStations\(\) has parameter \$stationList with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Api/StationApiInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Api\\StationApiInterface\:\:putStations\(\) has parameter \$stationList with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Api/StationApiInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Api\\ValueApi\:\:putValues\(\) has parameter \$valueList with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Api/ValueApi.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Api\\ValueApiInterface\:\:putValues\(\) has parameter \$valueList with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Api/ValueApiInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClient\:\:get\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Client/ApiClient.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClient\:\:get\(\) has parameter \$uri with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Client/ApiClient.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClient\:\:post\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Client/ApiClient.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClient\:\:post\(\) has parameter \$uri with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Client/ApiClient.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClient\:\:put\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Client/ApiClient.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClient\:\:put\(\) has parameter \$uri with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Client/ApiClient.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClientInterface\:\:get\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Client/ApiClientInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClientInterface\:\:get\(\) has parameter \$uri with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Client/ApiClientInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClientInterface\:\:post\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Client/ApiClientInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClientInterface\:\:post\(\) has parameter \$uri with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Client/ApiClientInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClientInterface\:\:put\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Client/ApiClientInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Client\\ApiClientInterface\:\:put\(\) has parameter \$uri with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/Client/ApiClientInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Serializer\\LuftSerializer\:\:deserialize\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Serializer/LuftSerializer.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Serializer\\LuftSerializer\:\:serialize\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Serializer/LuftSerializer.php
+
+		-
+			message: '#^Readonly property Caldera\\LuftApiBundle\\Serializer\\LuftSerializer\:\:\$serializer is assigned outside of the constructor\.$#'
+			identifier: property.readOnlyAssignNotInConstructor
+			count: 1
+			path: src/Serializer/LuftSerializer.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Serializer\\LuftSerializerInterface\:\:deserialize\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Serializer/LuftSerializerInterface.php
+
+		-
+			message: '#^Method Caldera\\LuftApiBundle\\Serializer\\LuftSerializerInterface\:\:serialize\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Serializer/LuftSerializerInterface.php
+
+		-
+			message: '#^Cannot call method getTimestamp\(\) on DateTime\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Serializer/LuftSerializerTest.php
