@@ -1,0 +1,15 @@
+parameters:
+    level: 8
+    # Static analysis runs on a single pinned setup (PHP 8.4, highest deps;
+    # see .github/workflows/ci.yml) because PHPStan findings depend on the
+    # exact installed dependency versions. Tolerate unmatched baseline
+    # entries so minor dependency drift within that range cannot turn the
+    # build red on a stale baseline line.
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - src
+        - tests
+
+includes:
+    - phpstan-baseline.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon

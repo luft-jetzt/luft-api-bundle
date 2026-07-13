@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: PHPUnit PHP ${{ matrix.php }} / ${{ matrix.dependencies }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '8.4', '8.5' ]
+        dependencies: [ lowest, highest ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer:v2
+
+      - name: Validate composer.json
+        run: composer validate --no-check-publish
+
+      - name: Install dependencies (highest)
+        if: matrix.dependencies == 'highest'
+        run: composer update --no-interaction --no-progress --prefer-dist
+
+      - name: Install dependencies (lowest)
+        if: matrix.dependencies == 'lowest'
+        run: composer update --no-interaction --no-progress --prefer-dist --prefer-lowest --prefer-stable
+
+      - name: PHPUnit
+        run: composer test
+
+  static-analysis:
+    name: Static analysis & code style
+    runs-on: ubuntu-latest
+
+    # PHPStan results depend on the exact installed dependency versions, so
+    # static analysis runs once on a pinned setup (PHP 8.4, highest deps)
+    # rather than across the whole test matrix. The PHPStan baseline is
+    # generated against this same setup. PHPUnit above still covers the full
+    # PHP 8.4/8.5 x lowest/highest matrix.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: composer update --no-interaction --no-progress --prefer-dist
+
+      - name: PHPStan
+        run: composer phpstan
+
+      - name: PHP-CS-Fixer
+        env:
+          PHP_CS_FIXER_IGNORE_ENV: 1
+        run: composer cs-check

@@ -17,7 +17,7 @@ class ValueApi extends AbstractApi implements ValueApiInterface
     {
         // remove keys from $valueList to ensure we build a real json list
         $valueList = array_values($valueList);
-        
+
         $this->client->put('/api/value', [
             'body' => $this->luftSerializer->serialize($valueList, 'json'),
         ]);
