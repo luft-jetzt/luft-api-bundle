@@ -8,11 +8,15 @@ class StationApi extends AbstractApi implements StationApiInterface
 {
     public function getStations(string $provider = null): array
     {
+        $options = [];
+
         if ($provider) {
-            $response = $this->client->get(sprintf('/api/station?provider=%s', $provider));
-        } else {
-            $response = $this->client->get('/api/station');
+            // Let the HttpClient encode the query so characters like &, =, #
+            // or spaces in $provider cannot break out of the parameter.
+            $options['query'] = ['provider' => $provider];
         }
+
+        $response = $this->client->get('/api/station', $options);
 
         $type = sprintf('%s[]', Station::class);
         $stationList = $this->luftSerializer->deserialize($response->getContent(), $type, self::SERIALIZER_FORMAT);
@@ -21,7 +25,13 @@ class StationApi extends AbstractApi implements StationApiInterface
 
         /** @var Station $station */
         foreach ($stationList as $station) {
-            $assocStationList[$station->getStationCode()] = $station;
+            $stationCode = $station->getStationCode();
+
+            if (null === $stationCode || '' === $stationCode) {
+                throw new \UnexpectedValueException('Received a station without a station code from the API; cannot key it uniquely.');
+            }
+
+            $assocStationList[$stationCode] = $station;
         }
 
         return $assocStationList;
@@ -41,7 +51,15 @@ class StationApi extends AbstractApi implements StationApiInterface
     {
         /** @var Station $station */
         foreach ($stationList as $station) {
-            $postApiUrl = sprintf('/api/station/%s', $station->getStationCode());
+            $stationCode = $station->getStationCode();
+
+            if (null === $stationCode || '' === $stationCode) {
+                throw new \InvalidArgumentException('Cannot POST a station without a station code.');
+            }
+
+            // rawurlencode the code (from external data sources) so a value
+            // containing /, ?, # or spaces cannot alter the request path.
+            $postApiUrl = sprintf('/api/station/%s', rawurlencode($stationCode));
 
             $this->client->post($postApiUrl, [
                 'body' => $this->luftSerializer->serialize($station, self::SERIALIZER_FORMAT),
