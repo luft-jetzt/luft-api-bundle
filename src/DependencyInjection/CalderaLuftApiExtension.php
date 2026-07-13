@@ -23,6 +23,7 @@ class CalderaLuftApiExtension extends Extension
         $definition->setArgument(0, (string) $config['api']['hostname']);
         $definition->setArgument(1, (int) $config['api']['port']);
         $definition->setArgument(2, (bool) $config['api']['verify']);
+        $definition->setArgument(3, $config['api']['auth_bearer']);
     }
 
     public function getAlias(): string
