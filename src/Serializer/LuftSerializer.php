@@ -10,7 +10,6 @@ use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
-use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -57,10 +56,6 @@ class LuftSerializer implements LuftSerializerInterface
                 classMetadataFactory: $classMetadataFactory,
                 nameConverter: new CamelCaseToSnakeCaseNameConverter(),
                 propertyTypeExtractor: new ReflectionExtractor(),
-            ),
-            new GetSetMethodNormalizer(
-                classMetadataFactory: $classMetadataFactory,
-                nameConverter: new CamelCaseToSnakeCaseNameConverter(),
             ),
             new ArrayDenormalizer(),
         ];

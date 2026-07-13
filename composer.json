@@ -1,6 +1,8 @@
 {
     "name": "luft-jetzt/luft-api-bundle",
     "type": "library",
+    "description": "Symfony bundle / HTTP client to deliver air-quality stations and measurement values to the Luft.jetzt API.",
+    "license": "MIT",
     "authors": [
         {
             "name": "Malte Huebner",
