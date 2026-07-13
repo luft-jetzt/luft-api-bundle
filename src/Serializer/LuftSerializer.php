@@ -30,14 +30,14 @@ class LuftSerializer implements LuftSerializerInterface
 
     public function serialize(mixed $data, string $format, array $context = []): string
     {
-        $context = array_merge($context, self::DEFAULT_CONTEXT);
+        $context = array_merge(self::DEFAULT_CONTEXT, $context);
 
         return $this->serializer->serialize($data, $format, $context);
     }
 
     public function deserialize(mixed $data, string $type, string $format, array $context = []): mixed
     {
-        $context = array_merge($context, self::DEFAULT_CONTEXT);
+        $context = array_merge(self::DEFAULT_CONTEXT, $context);
 
         return $this->serializer->deserialize($data, $type, $format, $context);
     }

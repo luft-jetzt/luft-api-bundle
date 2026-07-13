@@ -6,7 +6,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 interface ApiClientInterface
 {
-    public function put($uri, array $options = []): ResponseInterface;
-    public function post($uri, array $options = []): ResponseInterface;
-    public function get($uri, array $options = []): ResponseInterface;
+    public function put(string $uri, array $options = []): ResponseInterface;
+    public function post(string $uri, array $options = []): ResponseInterface;
+    public function get(string $uri, array $options = []): ResponseInterface;
 }

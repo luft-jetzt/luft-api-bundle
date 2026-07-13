@@ -19,6 +19,8 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('hostname')->cannotBeEmpty()->end()
             ->scalarNode('port')->end()
             ->booleanNode('verify')->end()
+            ->integerNode('timeout')->defaultValue(10)->min(0)->end()
+            ->integerNode('max_duration')->defaultValue(30)->min(0)->end()
             ->end()
             ->end();
 
