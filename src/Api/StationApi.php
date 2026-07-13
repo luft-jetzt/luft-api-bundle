@@ -14,6 +14,8 @@ class StationApi extends AbstractApi implements StationApiInterface
             $response = $this->client->get('/api/station');
         }
 
+        $this->assertSuccessful($response);
+
         $type = sprintf('%s[]', Station::class);
         $stationList = $this->luftSerializer->deserialize($response->getContent(), $type, self::SERIALIZER_FORMAT);
 
@@ -32,9 +34,11 @@ class StationApi extends AbstractApi implements StationApiInterface
         // remove keys from $stationList to ensure we build a real json list
         $stationList = array_values($stationList);
 
-        $this->client->put('/api/station', [
+        $response = $this->client->put('/api/station', [
             'body' => $this->luftSerializer->serialize($stationList, self::SERIALIZER_FORMAT),
         ]);
+
+        $this->assertSuccessful($response);
     }
 
     public function postStations(array $stationList): void
@@ -43,9 +47,11 @@ class StationApi extends AbstractApi implements StationApiInterface
         foreach ($stationList as $station) {
             $postApiUrl = sprintf('/api/station/%s', $station->getStationCode());
 
-            $this->client->post($postApiUrl, [
+            $response = $this->client->post($postApiUrl, [
                 'body' => $this->luftSerializer->serialize($station, self::SERIALIZER_FORMAT),
             ]);
+
+            $this->assertSuccessful($response);
         }
     }
 }
