@@ -15,10 +15,13 @@ class Configuration implements ConfigurationInterface
             ->getRootNode()
             ->children()
             ->arrayNode('api')
+            ->isRequired()
             ->children()
-            ->scalarNode('hostname')->cannotBeEmpty()->end()
-            ->scalarNode('port')->end()
-            ->booleanNode('verify')->end()
+            ->scalarNode('hostname')->isRequired()->cannotBeEmpty()->end()
+            ->integerNode('port')->isRequired()->min(1)->max(65535)->end()
+            ->booleanNode('verify')->defaultTrue()->end()
+            ->scalarNode('auth_bearer')->defaultNull()->end()
+            ->end()
             ->end()
             ->end();
 
